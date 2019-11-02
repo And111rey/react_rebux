@@ -1,8 +1,8 @@
 import React from "react" 
 
-const Profile = () => {
+const Navbar = () => {
     return (
-        <div>
+        <div classNmae="nav">
             <nav className="nav">
             <div><a>Profile</a></div>
             <div><a>Messages</a></div>
@@ -14,4 +14,4 @@ const Profile = () => {
     )
 }
 
-export { Profile }
+export { Navbar }
