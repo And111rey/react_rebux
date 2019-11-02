@@ -1,0 +1,15 @@
+
+.header {
+    grid-area: h;
+    background-color: rgb(42, 42, 65);
+}
+
+.header img {
+    width: 60px;
+    color:red;
+}
+
+.header:hover {
+    transition: all ease 1s;
+    background-color: rgb(87, 26, 99);
+}
