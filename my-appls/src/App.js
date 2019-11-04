@@ -18,11 +18,10 @@ const App = () => {
       <Route path="/dialogs" component={Dialogs}/>
       <Route path="/profile" component={Profile} />
 
-      {/* <Profile/> */}
-      {/* <Dialogs/> */}
     </div>
     </BrowserRouter>
   )
 }
-
+/////
+////
 export default App;
