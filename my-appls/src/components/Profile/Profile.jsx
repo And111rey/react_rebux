@@ -1,5 +1,6 @@
 import React from "react" 
 import { MyPosts } from "./MyPosts/MyPosts"
+import "./Profile.css"
 
 const Profile = () => {
     return (

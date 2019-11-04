@@ -1,5 +1,12 @@
 
 .nav:hover {
     transition: all ease 0s;
-    border: 1px solid red;
+    border-top: 1px solid red;
+
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.nav a {
+    color: white;
 }
