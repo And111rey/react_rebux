@@ -7,5 +7,14 @@
 }
 
 .nav a {
-    color: white;
+    color: rgb(218, 203, 203);
+    text-decoration: none; 
+}
+
+.item .active {
+    color: goldenrod;
+}
+
+.item {
+    padding: 5px;
 }
