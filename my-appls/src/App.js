@@ -8,7 +8,7 @@ import { Profile } from "./components/Profile/Profile"
 import { Dialogs } from "./components/Dialogs/Dialigs" 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
     <div className="app-wrapper">
@@ -17,7 +17,8 @@ const App = () => {
 
       <Route path="/dialogs" component={Dialogs}/>
       <Route path="/profile" component={Profile} />
-
+      {/* <Route exact path="/dialogs" component={Dialogs}/> */}
+      {/* "exact" ->   используется для конкретизации урла */}
     </div>
     </BrowserRouter>
   )
