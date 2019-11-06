@@ -4,9 +4,16 @@
     border-radius: 15px;
 }
 
+.itemPost {
+    color: rgb(192, 181, 181);
+    font-size: 18px;
+    border: 1px solid rgb(192, 181, 181),
+}
+
 .item span {
-    border: solid 1px tomato;
+    border: solid 2px goldenrod;
     color: tomato;
+    border-radius: 25%;
 }
 
 .item span:hover {
