@@ -3,3 +3,10 @@
 .postBlock {
     padding: 10px;
 }
+
+.btn {
+    background: green;
+    border-color: green;
+    border-radius: 5px;
+    
+}

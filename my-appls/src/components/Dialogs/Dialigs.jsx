@@ -36,22 +36,21 @@ let messagesData = [
     { id: 4, mess: "can you help me" }
 ]
 
+let dialogsElements = dialogsData.map((el) => {
+        return < Dialog_Item name={el.name} id={el.id} />
+    }) 
+let messageElements = messagesData.map((el) => {
+        return < Message_Item mess={el.mess} />
+
+    })
 
     return (
         <div className="dialogs">
             <div className="dialog_items">
-              
-                < Dialog_Item name={dialogsData[0].name} id={dialogsData[0].id} />
-                < Dialog_Item name={dialogsData[1].name} id={dialogsData[1].id} />
-                < Dialog_Item name={dialogsData[2].name} id={dialogsData[2].id} />
-                < Dialog_Item name={dialogsData[3].name} id={dialogsData[3].id} />
-                
+              {dialogsElements}                
             </div>
-            <div className="messages_item">                
-                < Message_Item mess={messagesData[0].mess} />
-                < Message_Item mess={messagesData[1].mess} />
-                < Message_Item mess={messagesData[2].mess} />
-                < Message_Item mess={messagesData[3].mess} />
+            <div className="messages_item">
+                {messageElements}                
             </div>
         </div>
     )
