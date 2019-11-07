@@ -1,5 +1,5 @@
 
-
+import  rerenderEntireTeree  from "../render.js"
 
   
   let state = {
@@ -36,4 +36,14 @@
     ]
   } 
 
-export { state }
+export let addPost = (postMessage) => {
+      let newPost = {
+          id: 5,
+          post: postMessage,
+          like: 0
+      }
+      state.profilePage.posts.push(newPost);
+      rerenderEntireTeree()
+  }
+
+export  { state };

@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { state } from "./components/redux/state"
+import { rerenderEntireTeree } from "./render"
 
 
-
-ReactDOM.render(
-  <App state={state} />,
-  document.getElementById('root')
-);
+rerenderEntireTeree()

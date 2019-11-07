@@ -13,9 +13,6 @@ import { Dialogs } from "./components/Dialogs/Dialogs"
 
 const App = (props) => {
 
-
-// console.log(props.state.friends)
-
   return (
     <BrowserRouter>
     <div className="app-wrapper">
@@ -23,11 +20,11 @@ const App = (props) => {
       <Navbar friends={props.state.friends}/> 
 
       <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.state.messagesPage.dialogsData} messagesData={props.state.messagesPage.messagesData}/> }/> 
-      <Route path="/profile" render={ () => <Profile posts={props.state.profilePage.posts} /> } />
+      <Route path="/profile" render={ () => <Profile addPost={props.addPost} posts={props.state.profilePage.posts} /> } />
     </div>
     </BrowserRouter>
   )
 }
-/////
-////
+
+
 export default App;
