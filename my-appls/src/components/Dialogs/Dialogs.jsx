@@ -10,15 +10,7 @@ import { Message_Item } from "./Message_Item/Message_Item"
 
 
 const Dialogs = (props) => {
-    
-    // let dialogsData = [
-    //     { id: 1, name: "Stas" },
-    //     { id: 2, name: "Kostya" },
-    //     { id: 3, name: "Andrey L." },
-    //     { id: 4, name: "Sasha" }
-    // ]
-    
-    
+
 
     let dialogsData = props.dialogsData
     let messagesData = props.messagesData
