@@ -14,13 +14,13 @@ import { Dialogs } from "./components/Dialogs/Dialogs"
 const App = (props) => {
 
 
-
+// console.log(props.state.friends)
 
   return (
     <BrowserRouter>
     <div className="app-wrapper">
       <Header/>
-      <Navbar/> 
+      <Navbar friends={props.state.friends}/> 
 
       <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.state.messagesPage.dialogsData} messagesData={props.state.messagesPage.messagesData}/> }/> 
       <Route path="/profile" render={ () => <Profile posts={props.state.profilePage.posts} /> } />

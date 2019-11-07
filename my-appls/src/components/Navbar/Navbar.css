@@ -1,5 +1,5 @@
 
-.nav:hover {
+.nav {
     transition: all ease 0s;
     border-top: 1px solid grey;
     border-top-right-radius: 7px;
@@ -17,4 +17,12 @@
 
 .item {
     padding: 5px;
+}
+
+
+.nav .friendsContent {
+    border: 2px solid rgb(185, 165, 165);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(121, 124, 121);
 }

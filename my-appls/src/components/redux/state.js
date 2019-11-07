@@ -27,7 +27,13 @@
             { id: 3, mess: "I can explain" },
             { id: 4, mess: "can you help me" }
           ]
-    }    
+    },
+    friends: [
+        {id:1, name: "Stas"},
+        {id:2, name: "Kolya"},
+        {id:3, name: "Andrew"},
+        {id:4, name: "Masha"}
+    ]
   } 
 
 export { state }

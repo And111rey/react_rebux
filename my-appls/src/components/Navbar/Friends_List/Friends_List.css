@@ -1,0 +1,12 @@
+
+
+.friendsList  {
+    color: rgb(22, 17, 17);
+}
+
+.friendsList .friendItem img {
+    border: 1px solid;
+    height: 20px;
+    border-radius: 75%;
+     
+}
