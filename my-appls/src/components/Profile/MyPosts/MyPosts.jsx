@@ -9,25 +9,32 @@ const  MyPosts = (props) => {
       return < Post message = {el.post} like={el.like} />
     })
 
-    let newPostElement = React.createRef()
       
 
-    let addPost = () => {
-      let text = newPostElement.current.value
-      props.addPost(text)
-      newPostElement.current.value = ""
+    let addPost = (event) => {
+      let text = event.target.value
+      props.addPost()
     }
 
- 
-    
+
+
+    let onPostChange = (event) => {
+      let text = event.target.value
+      props.updateNewPOsText(text)
+      console.log( "from MyPosts" + " " +  text)
+    }
+
+
     return (
             <div className="postBlock">
                 <h3>My POST</h3>
                 <div>
+                  
                   <textarea 
-                    ref={newPostElement} 
+                    onChange={onPostChange}
                     id="new-post" 
-                    value={props.newPostText}></textarea>
+                    value={props.newPostText.newPostText}
+                    ></textarea>
                 </div>
                 <div>
                   <button onClick={addPost} className="btn">Add POST</button>
