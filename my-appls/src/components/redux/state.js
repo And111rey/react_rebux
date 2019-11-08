@@ -11,7 +11,8 @@ import  {rerenderEntireTeree}  from "../../render"
             {id: 2, post: "You are so cool",like: 6},
             {id: 3, post: "wow? it is great", like: 3},
             {id: 4, post: "Ha ha ha", like: 0},
-          ]
+          ],
+          newPostText: ".....Just new post text..."
     },
 
     messagesPage: {

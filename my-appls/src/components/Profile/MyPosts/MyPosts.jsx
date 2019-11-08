@@ -24,7 +24,10 @@ const  MyPosts = (props) => {
             <div className="postBlock">
                 <h3>My POST</h3>
                 <div>
-                  <textarea ref={newPostElement} id="new-post"></textarea>
+                  <textarea 
+                    ref={newPostElement} 
+                    id="new-post" 
+                    value={props.newPostText}></textarea>
                 </div>
                 <div>
                   <button onClick={addPost} className="btn">Add POST</button>
