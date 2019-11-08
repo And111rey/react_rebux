@@ -1,6 +1,7 @@
 
-import  {rerenderEntireTeree}  from "../../render"
-
+let rerenderEntireTeree = () => {
+  console.log("state changet")
+}
 
   let state = {
 
@@ -47,16 +48,18 @@ export let addPost = () => {
       }
       state.profilePage.posts.push(newPost);
       state.profilePage.newPostText = ""
-      alert(postMessage)
+      // alert(postMessage)
       rerenderEntireTeree(state)
   }
 
 export let updateNewPOsText = (newText) => {
-  // debugger;
     state.profilePage.newPostText =  state.profilePage.newPostText + newText
-    rerenderEntireTeree(state)
-    // console.log(state.posts.newPostText)
+    // rerenderEntireTeree(state)
     console.log(state.profilePage.newPostText)
+  }
+
+  export const subscribe = (observer) => {
+    rerenderEntireTeree = observer
   }
 
 export  { state };
