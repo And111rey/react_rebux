@@ -1,9 +1,6 @@
 
-let rerenderEntireTeree = () => {
-  console.log("state changet")
-}
-
-  let state = {
+let store = {
+  _state: {
 
     profilePage: {
         posts: [
@@ -35,31 +32,41 @@ let rerenderEntireTeree = () => {
         {id:3, name: "Andrew"},
         {id:4, name: "Masha"}
     ]
-  } 
-
-  
-window.state = state
-export let addPost = () => {
+  },
+  _callSubscriber () {
+    console.log("state changet")
+  },
+  addPost () {
     
     let newPost = {
           id: 999,
-          post: state.profilePage.newPostText,
+          post: this._state.profilePage.newPostText,
           like: 0
       }
-      state.profilePage.posts.push(newPost);
-      state.profilePage.newPostText = ""
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = ""
       // alert(postMessage)
-      rerenderEntireTeree(state)
+      this._callSubscriber(this._state)
+  },
+  updateNewPOsText (newText) {
+    this._state.profilePage.newPostText = newText
+    this._callSubscriber(this._state)
+    console.log(this._state.profilePage.newPostText)
+  },
+  subscribe (observer) {
+    this._callSubscriber = observer
+  },
+  getState() {
+    return this._state
   }
 
-export let updateNewPOsText = (newText) => {
-    state.profilePage.newPostText =  state.profilePage.newPostText + newText
-    // rerenderEntireTeree(state)
-    console.log(state.profilePage.newPostText)
-  }
+}
 
-  export const subscribe = (observer) => {
-    rerenderEntireTeree = observer
-  }
+ 
+window.store = store
 
-export  { state };
+
+
+
+
+export  { store };
