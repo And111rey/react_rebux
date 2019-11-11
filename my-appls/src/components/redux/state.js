@@ -36,28 +36,30 @@ let store = {
   _callSubscriber () {
     console.log("state changet")
   },
-  addPost () {
-    
-    let newPost = {
-          id: 999,
-          post: this._state.profilePage.newPostText,
-          like: 0
-      }
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = ""
-      // alert(postMessage)
-      this._callSubscriber(this._state)
-  },
-  updateNewPOsText (newText) {
-    this._state.profilePage.newPostText = newText
-    this._callSubscriber(this._state)
-    console.log(this._state.profilePage.newPostText)
-  },
+  
   subscribe (observer) {
     this._callSubscriber = observer
   },
   getState() {
     return this._state
+  },
+
+  dispatch (action) {
+    
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 999,
+        post: this._state.profilePage.newPostText,
+        like: 0
+    }
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = ""
+      this._callSubscriber(this._state)
+    } else if  (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.profilePage.newPostText = action.text
+      this._callSubscriber(this._state)
+      console.log(this._state.profilePage.newPostText)
+    }
   }
 
 }

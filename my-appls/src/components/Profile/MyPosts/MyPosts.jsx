@@ -3,7 +3,7 @@ import "./MyPosts.css"
 import { Post } from "./Post/Post"
 
 const  MyPosts = (props) => {
-
+  
     let posts = props.posts
     let postsElements = posts.map((el) => {
       return < Post message = {el.post} like={el.like} />
@@ -13,14 +13,14 @@ const  MyPosts = (props) => {
 
     let addPost = (event) => {
       let text = event.target.value
-      props.addPost()
+      props.dispatch({type:"ADD-POST"})
     }
 
 
 
     let onPostChange = (event) => {
       let text = event.target.value
-      props.updateNewPOsText(text)
+      props.dispatch({type: "UPDATE-NEW-POST-TEXT", text: text})
       console.log( "from MyPosts" + " " +  text)
     }
 
@@ -33,7 +33,7 @@ const  MyPosts = (props) => {
                   <textarea 
                     onChange={onPostChange}
                     id="new-post" 
-                    value={props.newPostText.newPostText}
+                    value={props.newPostText}
                     ></textarea>
                 </div>
                 <div>

@@ -11,9 +11,9 @@ export let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
       <App
-         addPost={store.addPost.bind(store)} 
+         dispatch={store.dispatch.bind(store)} 
          state={store.getState()} 
-         updateNewPOsText={store.updateNewPOsText.bind(store)} 
+        //  updateNewPOsText={store.updateNewPOsText.bind(store)} 
          />
     </BrowserRouter>, document.getElementById('root')
   );
