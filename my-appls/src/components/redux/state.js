@@ -62,26 +62,29 @@ let store = {
   },
 
   dispatch (action) {
-    // debugger;
     if (action.type === "ADD-POST") {
-    //   let newPost = {
-    //     id: 999,
-    //     post: this._state.profilePage.newPostText,
-    //     like: 0
-    // }
-    //   this._state.profilePage.posts.push(newPost);
-    //   this._state.profilePage.newPostText = ""
-    //   this._callSubscriber(this._state)
     this._addPost()
     } else if  (action.type === "UPDATE-NEW-POST-TEXT") {
-      // this._state.profilePage.newPostText = action.text
-      // this._callSubscriber(this._state)
-      // console.log(this._state.profilePage.newPostText)
       this._updateNewPostText(action)
     }
   }
 
 }
+
+export const addPostActionCreator = () => {
+  return {
+    type: "ADD-POST"
+  }
+}
+
+
+export const updateNewPostActionCreator = (text) => {
+  return {
+    type: "UPDATE-NEW-POST-TEXT",
+    text: text
+  }
+}
+
 
  
 window.store = store
