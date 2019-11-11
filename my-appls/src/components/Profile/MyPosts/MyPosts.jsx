@@ -20,6 +20,7 @@ const  MyPosts = (props) => {
 
     let onPostChange = (event) => {
       let text = event.target.value
+      // let action = {type: "UPDATE-NEW-POST-TEXT", text: text}
       props.dispatch({type: "UPDATE-NEW-POST-TEXT", text: text})
       console.log( "from MyPosts" + " " +  text)
     }
