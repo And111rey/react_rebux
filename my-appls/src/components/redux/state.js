@@ -36,31 +36,55 @@ let store = {
   _callSubscriber () {
     console.log("state changet")
   },
-  addPost () {
-    
-    let newPost = {
-          id: 999,
-          post: this._state.profilePage.newPostText,
-          like: 0
-      }
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = ""
-      // alert(postMessage)
-      this._callSubscriber(this._state)
-  },
-  updateNewPOsText (newText) {
-    this._state.profilePage.newPostText = newText
-    this._callSubscriber(this._state)
-    console.log(this._state.profilePage.newPostText)
-  },
+  
   subscribe (observer) {
     this._callSubscriber = observer
   },
   getState() {
     return this._state
+  },
+  
+
+  _addPost () {
+    let newPost = {
+      id: 999,
+      post: this._state.profilePage.newPostText,
+      like: 0
+  }
+    this._state.profilePage.posts.push(newPost);
+    this._state.profilePage.newPostText = ""
+    this._callSubscriber(this._state)
+  },
+  
+  _updateNewPostText (action) {
+      this._state.profilePage.newPostText = action.text
+      this._callSubscriber(this._state)
+  },
+
+  dispatch (action) {
+    if (action.type === "ADD-POST") {
+    this._addPost()
+    } else if  (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._updateNewPostText(action)
+    }
   }
 
 }
+
+export const addPostActionCreator = () => {
+  return {
+    type: "ADD-POST"
+  }
+}
+
+
+export const updateNewPostActionCreator = (text) => {
+  return {
+    type: "UPDATE-NEW-POST-TEXT",
+    text: text
+  }
+}
+
 
  
 window.store = store
