@@ -24,7 +24,6 @@ const  MyPosts = (props) => {
 
     let onPostChange = (event) => {
       let text = event.target.value
-      // let action = {type: "UPDATE-NEW-POST-TEXT", text: text}
       props.dispatch(updateNewPostActionCreator(text))
       console.log( "from MyPosts" + " " +  text)
     }
