@@ -1,3 +1,7 @@
+import { dialogsReducer } from "./dialogs-reducer"
+import { profileReduer } from "./profile-reducer"
+
+
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
@@ -13,7 +17,7 @@ let store = {
             {id: 3, post: "wow? it is great", like: 3},
             {id: 4, post: "Ha ha ha", like: 0},
           ],
-          newPostText: ""
+        newPostText: ""
     },
 
     messagesPage: {
@@ -56,7 +60,7 @@ let store = {
       id: 999,
       post: this._state.profilePage.newPostText,
       like: 0
-  }
+    }
     this._state.profilePage.posts.push(newPost);
     this._state.profilePage.newPostText = ""
     this._callSubscriber(this._state)
@@ -68,22 +72,32 @@ let store = {
   },
 
   dispatch (action) {
-    // debugger;
-    if (action.type === "ADD-POST") {
-      this._addPost()
-    } else if  (action.type === "UPDATE-NEW-POST-TEXT") {
-        this._updateNewPostText(action)
-    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        this._state.messagesPage.newMessageBody = action.body
-        this._callSubscriber(this._state)
-        console.log(action.body)
-    } else if (action.type === SEND_MESSAGE) {
-        let  body = this._state.messagesPage.newMessageBody
-        let newMessageElemtnt = { id: 4, mess: body }
-        this._state.messagesPage.messagesData.push(newMessageElemtnt)
-        this._state.messagesPage.newMessageBody = ""
-        this._callSubscriber(this._state)
-    }
+
+    profileReduer(this._state.profilePage, action)
+    dialogsReducer(this._state.messagesPage, action)
+    // if (action.type === ADD_POST) {
+    //   let newPost = {
+    //     id: 999,
+    //     post: this._state.profilePage.newPostText,
+    //     like: 0
+    //   }
+    //   this._state.profilePage.posts.push(newPost);
+    //   this._state.profilePage.newPostText = ""
+    //   this._callSubscriber(this._state)
+    // } else if  (action.type === UPDATE_NEW_POST_TEXT) {
+    //     this._state.profilePage.newPostText = action.text
+    //     this._callSubscriber(this._state)
+    // } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+    //     this._state.messagesPage.newMessageBody = action.body
+    //     this._callSubscriber(this._state)
+    //     console.log(action.body)
+    // } else if (action.type === SEND_MESSAGE) {
+    //     let  body = this._state.messagesPage.newMessageBody
+    //     let newMessageElemtnt = { id: 4, mess: body }
+    //     this._state.messagesPage.messagesData.push(newMessageElemtnt)
+    //     this._state.messagesPage.newMessageBody = ""
+    //     this._callSubscriber(this._state)
+    // }
   }
 
 }
