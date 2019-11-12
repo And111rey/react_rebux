@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
+const SEND_MESSAGE = "SEND-MESSAGE" 
 
 let store = {
   _state: {
@@ -15,7 +17,7 @@ let store = {
     },
 
     messagesPage: {
-        dialogsData: [
+          dialogsData: [
             { id: 1, name: "Stas" },
             { id: 2, name: "Kostya" },
             { id: 3, name: "Andrey L." },
@@ -26,8 +28,10 @@ let store = {
             { id: 2, mess: "where yo going" },
             { id: 3, mess: "I can explain" },
             { id: 4, mess: "can you help me" }
-          ]
+          ],
+          newMessageBody: "data from state"
     },
+    sidebar: {},
     friends: [
         {id:1, name: "Stas"},
         {id:2, name: "Kolya"},
@@ -64,15 +68,38 @@ let store = {
   },
 
   dispatch (action) {
+    // debugger;
     if (action.type === "ADD-POST") {
-    this._addPost()
+      this._addPost()
     } else if  (action.type === "UPDATE-NEW-POST-TEXT") {
-      this._updateNewPostText(action)
+        this._updateNewPostText(action)
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+        this._state.messagesPage.newMessageBody = action.body
+        this._callSubscriber(this._state)
+        console.log(action.body)
+    } else if (action.type === SEND_MESSAGE) {
+        let  body = this._state.messagesPage.newMessageBody
+        let newMessageElemtnt = { id: 4, mess: body }
+        this._state.messagesPage.messagesData.push(newMessageElemtnt)
+        this._state.messagesPage.newMessageBody = ""
+        this._callSubscriber(this._state)
     }
   }
 
 }
-
+export const sendMessageGreator = () => {
+  return {
+    type: SEND_MESSAGE
+  }
+} 
+export const updateNewMessageBodyCreator = (body) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_BODY,
+    body: body
+  }
+} 
+////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 export const addPostActionCreator = () => {
   return {
     type: ADD_POST

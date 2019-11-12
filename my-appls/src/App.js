@@ -19,7 +19,7 @@ const App = (props) => {
       <Header/>
       <Navbar friends={props.state.friends}/> 
 
-      <Route path="/dialogs" render={ () => <Dialogs dialogsData={props.state.messagesPage.dialogsData} messagesData={props.state.messagesPage.messagesData}/> }/> 
+      <Route path="/dialogs" render={ () => <Dialogs dispatch={props.dispatch} messagesData={props.state.messagesPage}/> }/> 
       <Route path="/profile" render={ () => <Profile dispatch={props.dispatch} profilePage={props.state.profilePage}  /> } />
     </div>  
     </BrowserRouter>
