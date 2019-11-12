@@ -55,49 +55,14 @@ let store = {
   },
   
 
-  _addPost () {
-    let newPost = {
-      id: 999,
-      post: this._state.profilePage.newPostText,
-      like: 0
-    }
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = ""
-    this._callSubscriber(this._state)
-  },
-  
-  _updateNewPostText (action) {
-      this._state.profilePage.newPostText = action.text
-      this._callSubscriber(this._state)
-  },
+
 
   dispatch (action) {
-
+    debugger;
     profileReduer(this._state.profilePage, action)
     dialogsReducer(this._state.messagesPage, action)
-    // if (action.type === ADD_POST) {
-    //   let newPost = {
-    //     id: 999,
-    //     post: this._state.profilePage.newPostText,
-    //     like: 0
-    //   }
-    //   this._state.profilePage.posts.push(newPost);
-    //   this._state.profilePage.newPostText = ""
-    //   this._callSubscriber(this._state)
-    // } else if  (action.type === UPDATE_NEW_POST_TEXT) {
-    //     this._state.profilePage.newPostText = action.text
-    //     this._callSubscriber(this._state)
-    // } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-    //     this._state.messagesPage.newMessageBody = action.body
-    //     this._callSubscriber(this._state)
-    //     console.log(action.body)
-    // } else if (action.type === SEND_MESSAGE) {
-    //     let  body = this._state.messagesPage.newMessageBody
-    //     let newMessageElemtnt = { id: 4, mess: body }
-    //     this._state.messagesPage.messagesData.push(newMessageElemtnt)
-    //     this._state.messagesPage.newMessageBody = ""
-    //     this._callSubscriber(this._state)
-    // }
+    this._callSubscriber(this._state)
+    
   }
 
 }
