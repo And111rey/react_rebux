@@ -2,11 +2,6 @@ import { dialogsReducer } from "./dialogs-reducer"
 import { profileReduer } from "./profile-reducer"
 
 
-const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
-const SEND_MESSAGE = "SEND-MESSAGE" 
-
 let store = {
   _state: {
 
@@ -66,32 +61,32 @@ let store = {
   }
 
 }
-export const sendMessageGreator = () => {
-  return {
-    type: SEND_MESSAGE
-  }
-} 
-export const updateNewMessageBodyCreator = (body) => {
-  return {
-    type: UPDATE_NEW_MESSAGE_BODY,
-    body: body
-  }
-} 
+// export const sendMessageGreator = () => {
+//   return {
+//     type: SEND_MESSAGE
+//   }
+// } 
+// export const updateNewMessageBodyCreator = (body) => {
+//   return {
+//     type: UPDATE_NEW_MESSAGE_BODY,
+//     body: body
+//   }
+// } 
 ////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
-export const addPostActionCreator = () => {
-  return {
-    type: ADD_POST
-  }
-}
+// export const addPostActionCreator = () => {
+//   return {
+//     type: ADD_POST
+//   }
+// }
 
 
-export const updateNewPostActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    text: text
-  }
-}
+// export const updateNewPostActionCreator = (text) => {
+//   return {
+//     type: UPDATE_NEW_POST_TEXT,
+//     text: text
+//   }
+// }
 
 
  
