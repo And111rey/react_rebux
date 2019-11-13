@@ -8,6 +8,7 @@ import { store } from "./components/redux/store"
 
 
 export let rerenderEntireTree = (state) => {
+
   ReactDOM.render(
     <BrowserRouter>
       <App

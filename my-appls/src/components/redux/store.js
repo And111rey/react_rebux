@@ -59,8 +59,8 @@ let store = {
 
   dispatch (action) {
     // debugger;
-    profileReduer(this._state.profilePage, action)
-    dialogsReducer(this._state.messagesPage, action)
+    this._state.profilePage = profileReduer(this._state.profilePage, action)
+    this._state.messagesPage =  dialogsReducer(this._state.messagesPage, action)
     this._callSubscriber(this._state)
     
   }

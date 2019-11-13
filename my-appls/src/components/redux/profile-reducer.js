@@ -1,3 +1,4 @@
+import  { updateNewPostActionCreator } from "./store"
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 
@@ -8,22 +9,41 @@ const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 //
 //
 //
-export const profileReduer = (state, action) => {
+// export const profileReduer = (state, action) => {
 
+//     if (action.type === ADD_POST) {
+//         let newPost = {
+//           id: 999,
+//           post: state.newPostText,
+//           like: 0
+//         }
+//         state.posts.push(newPost);
+//         state.newPostText = ""
+        
+//       } else if  (action.type === UPDATE_NEW_POST_TEXT) {
+//           state.newPostText = action.text
+          
+//       } 
 
-    if (action.type === ADD_POST) {
+//     return state; 
+// }
+
+export let profileReduer = (state, action) => {
+  switch(action.type) {
+    case ADD_POST:
         let newPost = {
           id: 999,
           post: state.newPostText,
           like: 0
         }
         state.posts.push(newPost);
-        state.newPostText = ""
-        
-      } else if  (action.type === UPDATE_NEW_POST_TEXT) {
+        state.newPostText = "";
+        // return state
+      case UPDATE_NEW_POST_TEXT:
           state.newPostText = action.text
-          
-      } 
-
-    return state; 
+          // return state;
+      default:
+        return state;
+  }
 }
+
