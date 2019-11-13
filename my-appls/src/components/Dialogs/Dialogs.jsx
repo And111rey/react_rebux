@@ -3,7 +3,7 @@ import React from 'react';
 import "./Dialogs.css"
 import { Dialog_Item } from "./Dialog_Item/Dialog_Item"
 import { Message_Item } from "./Message_Item/Message_Item"
-import { updateNewMessageBodyCreator, sendMessageGreator } from "../redux/state"
+import { updateNewMessageBodyCreator, sendMessageGreator } from "../redux/store"
 
 
 
