@@ -31,13 +31,7 @@ let store = {
           newMessageBody: "data from state"
     },
     sidebar: {},
-    friends: [
-        {id:1, name: "Stas"},
-        {id:2, name: "Kolya"},
-        {id:3, name: "Andrew"},
-        {id:4, name: "Masha"}
-    ]
-  },
+   },
   _callSubscriber () {
     console.log("state changet")
   },
@@ -61,32 +55,7 @@ let store = {
   }
 
 }
-// export const sendMessageGreator = () => {
-//   return {
-//     type: SEND_MESSAGE
-//   }
-// } 
-// export const updateNewMessageBodyCreator = (body) => {
-//   return {
-//     type: UPDATE_NEW_MESSAGE_BODY,
-//     body: body
-//   }
-// } 
-////////////////////////////////////////////////////
-///////////////////////////////////////////////////////
-// export const addPostActionCreator = () => {
-//   return {
-//     type: ADD_POST
-//   }
-// }
 
-
-// export const updateNewPostActionCreator = (text) => {
-//   return {
-//     type: UPDATE_NEW_POST_TEXT,
-//     text: text
-//   }
-// }
 
 
  

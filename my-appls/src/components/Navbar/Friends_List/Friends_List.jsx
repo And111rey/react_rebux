@@ -6,9 +6,18 @@ import { FriendItelList } from "./FriendItelList/FriendItelList"
 
 
 
-const FriendsList = (props) => {
+const FriendsList = () => {
 
-        let friends = props.friends
+
+
+    let friends = [
+        {id:1, name: "Stas"},
+        {id:2, name: "Kolya"},
+        {id:3, name: "Andrew"},
+        {id:4, name: "Masha"}
+    ]
+
+      
         let friendsList = friends.map((el) => {
         return  <FriendItelList oneName={el.name}/>
     })

@@ -13,15 +13,14 @@ export let rerenderEntireTree = (state) => {
       <App
          dispatch={store.dispatch.bind(store)} 
          state={store.getState()} 
-        //  updateNewPOsText={store.updateNewPOsText.bind(store)} 
          />
     </BrowserRouter>, document.getElementById('root')
   );
-}
+} 
 
 rerenderEntireTree(store.getState())
 
-store.subscribe(() => {
-  let state  = store.getState();
+store.subscribe( ()=>{
+  let state = store.getState()
   rerenderEntireTree(state)
 })

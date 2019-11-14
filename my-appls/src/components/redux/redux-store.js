@@ -1,12 +1,14 @@
-import { createStore, combineReducers } from "redux";
-import { profileReduer } from "./profile-reducer"
-import { dialogsReducer } from "./dialogs-reducer" 
+import { createStore, combineReducers } from "redux"
+import { profileReducer } from "./profile-reducer"
+import { dialogsReducer } from "./dialogs-reducer"
 
 
-let reducers = combineReducers({    // комбаинем редюсссеры, и отдаем их в стор 
-    profile: profileReduer, //  за ветку "profile" отвечает  импортирований сюда "profileReduer"  
-    dialogs: dialogsReducer //  за ветку "dialogs" отвечает  импортирований сюда "dialogsReducer"
-});
+let reducers = combineReducers({  // собираем все редюссері в одну кучу
+    profile: profileReducer, // imported reducer from "profileReduer.js"
+    dialogs: dialogsReducer // imported reducer from "/dialogsReducer.js"
+}) // редюссер востпринимать как свойствa "store.js"
 
 
-export let store = createStore(reducers) // 
+let store = createStore(reducers)
+
+export { store }
