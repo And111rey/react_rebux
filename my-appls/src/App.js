@@ -10,17 +10,16 @@ import { Dialogs } from "./components/Dialogs/Dialogs"
 
 
 
-
 const App = (props) => {
-
+ console.log (props)
   return (
     <BrowserRouter>
     <div className="app-wrapper">
       <Header/>
-      <Navbar friends={props.state.friends}/> 
+      <Navbar /> 
 
       <Route path="/dialogs" render={ () => <Dialogs dispatch={props.dispatch} messagesData={props.state.messagesPage}/> }/> 
-      <Route path="/profile" render={ () => <Profile dispatch={props.dispatch} profilePage={props.state.profilePage}  /> } />
+      <Route path="/profile" render={ () => <Profile dispatch={props.dispatch} profilePage={props.state.profile}  /> } />
     </div>  
     </BrowserRouter>
   )

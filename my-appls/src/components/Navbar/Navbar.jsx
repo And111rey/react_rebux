@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom"
 import "./Navbar.css"
 import { FriendsList } from "./Friends_List/Friends_List"
 
-const Navbar = (props) => {
+const Navbar = () => {
 
 // console.log(props.friends)
-    return (
+    return ( 
         <div className="nav">
             <div className="item"><NavLink to="/profile" >Profile</NavLink></div>
             <div className="item"><NavLink to="/dialogs" >Messages</NavLink></div>
@@ -14,7 +14,7 @@ const Navbar = (props) => {
             <div className="item"><NavLink to="music" >Music</NavLink></div>
             <div className="item"><NavLink to="settings" >Settings</NavLink></div>
             <div className="friendsContent">
-                < FriendsList friends={props.friends} />
+                < FriendsList />
             </div>
         </div>
     )

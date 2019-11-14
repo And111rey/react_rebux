@@ -8,24 +8,24 @@ const SEND_MESSAGE = "SEND-MESSAGE"
 //               newMessageBody: ""
 //           }
 
+let inirialState = {
+  dialogsData: [
+    { id: 1, name: "Stas" },
+    { id: 2, name: "Kostya" },
+    { id: 3, name: "Andrey L." },
+    { id: 4, name: "Sasha" }
+  ],
+  messagesData: [
+    { id: 1, mess: "HEllo " },
+    { id: 2, mess: "where yo going" },
+    { id: 3, mess: "I can explain" },
+    { id: 4, mess: "can you help me" }
+  ],
+  newMessageBody: "data from state"
+}
 
-// let initialState = {
-//     dialogsData: [
-//         { id: 1, name: "Stas" },
-//         { id: 2, name: "Kostya" },
-//         { id: 3, name: "Andrey L." },
-//         { id: 4, name: "Sasha" }
-//       ],
-//       messagesData: [
-//         { id: 1, mess: "HEllo " },
-//         { id: 2, mess: "where yo going" },
-//         { id: 3, mess: "I can explain" },
-//         { id: 4, mess: "can you help me" }
-//       ],
-//       newMessageBody: "data from state"
-// }
 
-export let dialogsReducer = (state, action) => {
+export let dialogsReducer = (state = inirialState, action) => {
     switch(action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
             state.newMessageBody = action.body;

@@ -9,7 +9,6 @@ import { updateNewMessageBodyCreator, sendMessageGreator } from "../redux/dialog
 
 
 const Dialogs = (props) => {
-    // debugger;
 
     let dialogsData = props.messagesData.dialogsData
     let messagesData = props.messagesData.messagesData
