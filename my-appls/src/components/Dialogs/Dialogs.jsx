@@ -9,9 +9,8 @@ import { updateNewMessageBodyCreator, sendMessageGreator } from "../redux/dialog
 
 
 const Dialogs = (props) => {
-
-    let dialogsData = props.messagesData.dialogsData
-    let messagesData = props.messagesData.messagesData
+    let dialogsData = props.messagesData.dialogsData;
+    let messagesData = props.messagesData.messagesData;
     let newMessageBody = props.messagesData.newMessageBody
 
 
